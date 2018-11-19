@@ -1,7 +1,7 @@
 const osType = require('os').type();
 var spawnSync = require('child_process').spawnSync;
 var path = require('path');
-const converter = require('./utils/converter');
+const converter = require('../utils/converter');
 
 
 const diskLabel = osType === "Windows_NT" ? __dirname.charAt(0) : "/";
@@ -9,7 +9,7 @@ const diskLabel = osType === "Windows_NT" ? __dirname.charAt(0) : "/";
 function getInfo() {
     let result = {};
     if (osType === "Windows_NT") {
-        result = spawnSync(path.join(__dirname, '../bin/drivespace.exe'), ["drive-" + diskLabel]);
+        result = spawnSync(path.join(__dirname, '../../bin/drivespace.exe'), ["drive-" + diskLabel]);
 
         if (result.error) {
             throw result.error;

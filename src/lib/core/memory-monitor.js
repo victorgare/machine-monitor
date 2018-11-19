@@ -1,5 +1,5 @@
 const os = require('os');
-const converter = require('./utils/converter');
+const converter = require('../utils/converter');
 
 module.exports = {
 
